@@ -43,15 +43,18 @@
       let male = 0;
 
       // Add your code here
-      const catObj = JSON.parse(catString)
-      for (let i = 0; i < catObj.length; i++) {
-        let cat = catObj[i]
-        if (i === (catObj.length - 1)) {
-        motherInfo = motherInfo + ' and ' + cat.name + '.'}
-        else{
+      const cats = JSON.parse(catString);
+      male = cats.map(c => c.kittens).flat(1).filter(k => k.gender === 'f').length
+      female = cats.map(c => c.kittens).flat(1).filter(k => k.gender === 'm').length
+      total = male + female
+      
+      for (let i = 0; i < cats.length; i++) {
+        let cat = cats[i]
+        if (i === (cats.length - 1)) {
+          motherInfo = motherInfo + ' and ' + cat.name + '.'
+        } else {
           motherInfo = motherInfo + cat.name + ', '
         }
-
       };
       
       
