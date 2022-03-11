@@ -47,7 +47,7 @@
       male = cats.map(c => c.kittens).flat(1).filter(k => k.gender === 'f').length
       female = cats.map(c => c.kittens).flat(1).filter(k => k.gender === 'm').length
       total = male + female
-      
+
       for (let i = 0; i < cats.length; i++) {
         let cat = cats[i]
         if (i === (cats.length - 1)) {
@@ -57,7 +57,7 @@
         }
       };
       
-      
+      kittenInfo = 'Total Kittens: ' + total + '  Male Kittens: ' + male + '  Female Kittens: ' + female
       // Don't edit the code below here!
 
       para1.textContent = motherInfo;
